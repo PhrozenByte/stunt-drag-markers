@@ -1,0 +1,139 @@
+<!--
+  - PhrozenByte Stunt Drag Markers (SDM)
+  -
+  - Copyright (C) 2015-2016  Daniel Rudolf <http://www.daniel-rudolf.de/>
+  -
+  - This program is free software: you can redistribute it and/or modify it
+  - under the terms of the GNU Affero General Public License as published
+  - by the Free Software Foundation, version 3 of the License only.
+  -
+  - This program is distributed in the hope that it will be useful,
+  - but WITHOUT ANY WARRANTY; without even the implied warranty of
+  - MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  - GNU Affero General Public License for more details.
+  -
+  - You should have received a copy of the GNU Affero General Public License
+  - along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+<def name="PhrozenByte Stunt Drag Markers">
+    <setting name="skyTopColor" friendlyname="Sky gradient: top color" type="color" description="" default="#00000000" required="false"/>
+    <setting name="skyBottomColor" friendlyname="Sky gradient: bottom color" type="color" description="" default="#00000000" required="false"/>
+    <setting name="waterColor" friendlyname="Water color" type="color" description="" default="#00000000" required="false"/>
+    <setting name="gravity" friendlyname="World gravity" type="number" description="" default="0.008" required="false"/>
+
+    <element name="sdmText" friendlyname="SDM: Text" icon="img/text.png">
+        <data name="position" type="coord3d" required="true" default="0,0,0" />
+        <data name="rotation" type="coord3d" required="true" default="0,0,0" />
+        <data name="type" type="markerType" required="true" default="checkpoint" />
+        <data name="size" type="number" required="true" default="2.25"/>
+        <data name="color" type="color" required="false" default="#0000ffff" />
+        <marker type="!type!" size="!size!" color="!color!" />
+
+        <data name="text" type="string" description="Text" required="true" default="" />
+        <data name="textSize" type="natural" description="Text size" required="true" default="12" />
+        <data name="textColor" type="color" description="Text color" required="true" default="#ffffffff" />
+        <data name="textPositionX" type="number" description="Text position (horicontal)" required="true" default="0.5" />
+        <data name="textPositionY" type="number" description="Text position (vertical)" required="true" default="0.5" />
+        <data name="textAlignX" type="selection:left,center,right" description="Text alignment (horicontal)" required="true" default="center" />
+        <data name="textAlignY" type="selection:top,center,bottom" description="Text alignment (vertical)" required="true" default="center" />
+        <data name="textDuration" type="natural" description="Hide text after x ms" required="true" default="3000" />
+
+        <data name="visibility" type="selection:Visible,Hidden" description="Marker visibility" required="true" default="Hidden" />
+    </element>
+    <element name="sdmMagnet" friendlyname="SDM: Magnet" icon="img/magnet.png">
+        <data name="position" type="coord3d" required="true" default="0,0,0" />
+        <data name="rotation" type="coord3d" required="true" default="0,0,0" />
+        <data name="type" type="markerType" required="true" default="checkpoint" />
+        <data name="size" type="number" required="true" default="2.25"/>
+        <data name="color" type="color" required="false" default="#0000ffff" />
+        <marker type="!type!" size="!size!" color="!color!" />
+
+        <data name="enable" type="selection:Enable,Disable" description="Enable or disable magnet?" required="true" default="Enable" />
+        <data name="mode" type="selection:Default,Fly" description="Magnet mode" required="true" default="Default" />
+
+        <data name="visibility" type="selection:Visible,Hidden" description="Marker visibility" required="true" default="Hidden" />
+    </element>
+    <element name="sdmGravity" friendlyname="SDM: Gravity" icon="img/gravity.png">
+        <data name="position" type="coord3d" required="true" default="0,0,0" />
+        <data name="rotation" type="coord3d" required="true" default="0,0,0" />
+        <data name="type" type="markerType" required="true" default="checkpoint" />
+        <data name="size" type="number" required="true" default="2.25"/>
+        <data name="color" type="color" required="false" default="#0000ffff" />
+        <marker type="!type!" size="!size!" color="!color!" />
+
+        <data name="gravityX" type="number" description="Gravity of x-axis" required="true" default="0" />
+        <data name="gravityY" type="number" description="Gravity of y-axis" required="true" default="0" />
+        <data name="gravityZ" type="number" description="Gravity on z-axis" required="true" default="-1" />
+        <data name="mode" type="selection:World,Client,Vehicle,Vehicle-Boost" description="Gravity mode" required="true" default="Vehicle" />
+
+        <data name="visibility" type="selection:Visible,Hidden" description="Marker visibility" required="true" default="Hidden" />
+    </element>
+    <element name="sdmTeleport" friendlyname="SDM: Teleport" icon="img/teleport.png">
+        <data name="position" type="coord3d" required="true" default="0,0,0" />
+        <data name="rotation" type="coord3d" required="true" default="0,0,0" />
+        <data name="type" type="markerType" required="true" default="checkpoint" />
+        <data name="size" type="number" required="true" default="2.25"/>
+        <data name="color" type="color" required="false" default="#0000ffff" />
+        <marker type="!type!" size="!size!" color="!color!" />
+
+        <data name="target" type="element:sdmTeleportTarget" description="Teleporter target" required="false" default="" />
+        <data name="velocity" type="number" description="Velocity in km/h (Leave empty to keep momentum)" required="false" default="" />
+        <data name="keepRotation" type="selection:Keep,Reset" description="Keep rotation" required="true" default="Reset" />
+
+        <data name="visibility" type="selection:Visible,Hidden" description="Marker visibility" required="true" default="Hidden" />
+    </element>
+    <element name="sdmTeleportTarget" friendlyname="SDM: Teleport Target" icon="img/teleportTarget.png">
+        <data name="position" type="coord3d" required="true" default="0,0,0" />
+        <data name="rotation" type="coord3d" required="true" default="0,0,0" />
+        <data name="type" type="markerType" required="true" default="ring" />
+        <data name="size" type="number" required="true" default="2.25"/>
+        <data name="color" type="color" required="false" default="#0000ffff" />
+        <marker type="!type!" size="!size!" color="!color!" />
+
+        <data name="visibility" type="selection:Visible,Hidden" description="Marker visibility" required="true" default="Hidden" />
+    </element>
+    <element name="sdmHealth" friendlyname="SDM: Health" icon="img/health.png">
+        <data name="position" type="coord3d" required="true" default="0,0,0" />
+        <data name="rotation" type="coord3d" required="true" default="0,0,0" />
+        <data name="type" type="markerType" required="true" default="checkpoint" />
+        <data name="size" type="number" required="true" default="2.25"/>
+        <data name="color" type="color" required="false" default="#0000ffff" />
+        <marker type="!type!" size="!size!" color="!color!" />
+
+        <data name="health" type="natural" description="Health" required="true" default="1000" />
+
+        <data name="visibility" type="selection:Visible,Hidden" description="Marker visibility" required="true" default="Hidden" />
+    </element>
+    <element name="sdmSky" friendlyname="SDM: Sky gradient" icon="img/sky.png">
+        <data name="position" type="coord3d" required="true" default="0,0,0" />
+        <data name="rotation" type="coord3d" required="true" default="0,0,0" />
+        <data name="type" type="markerType" required="true" default="checkpoint" />
+        <data name="size" type="number" required="true" default="2.25"/>
+        <data name="color" type="color" required="false" default="#0000ffff" />
+        <marker type="!type!" size="!size!" color="!color!" />
+
+        <data name="topColor" type="color" description="Sky gradient: top color" required="true" default="#00000000" />
+        <data name="bottomColor" type="color" description="Sky gradient: bottom color" required="true" default="#00000000" />
+        <data name="mode" type="selection:World,Client" description="Apply to" required="true" default="Client" />
+
+        <data name="visibility" type="selection:Visible,Hidden" description="Marker visibility" required="true" default="Hidden" />
+    </element>
+    <element name="sdmWater" friendlyname="SDM: Water color" icon="img/water.png">
+        <data name="position" type="coord3d" required="true" default="0,0,0" />
+        <data name="rotation" type="coord3d" required="true" default="0,0,0" />
+        <data name="type" type="markerType" required="true" default="checkpoint" />
+        <data name="size" type="number" required="true" default="2.25"/>
+        <data name="color" type="color" required="false" default="#0000ffff" />
+        <marker type="!type!" size="!size!" color="!color!" />
+
+        <data name="waterColor" type="color" description="Water color" required="true" default="#00000000" />
+        <data name="mode" type="selection:World,Client" description="Apply to" required="true" default="Client" />
+
+        <data name="visibility" type="selection:Visible,Hidden" description="Marker visibility" required="true" default="Hidden" />
+    </element>
+
+    <script src="StuntDragMarkers_s.lua" type="server" />
+    <script src="StuntDragMarkers_c.lua" type="client" />
+    <script src="data/vehicleOffsets.lua" type="server" />
+    <script src="data/vehicleOffsets.lua" type="client" />
+</def>

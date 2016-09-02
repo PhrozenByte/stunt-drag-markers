@@ -1,0 +1,32 @@
+<meta>
+    <info name="PhrozenByte Stunt Drag Markers" author="Daniel Rudolf" version="2.0" type="script" edf:definition="StuntDragMarkers.edf"></info>
+
+    <include resource="mapmanager" />
+    <include resource="phrozenbyte-debug" />
+
+    <script src="StuntDragMarkers_s.lua" type="server" />
+    <script src="StuntDragMarkers_c.lua" type="client" />
+    <oop>true</oop>
+
+    <!--<script src="data/GenerateVehicleOffsets.lua" type="client" />-->
+    <script src="data/vehicleOffsets.lua" type="shared" />
+
+    <export function="addStuntDragMarker" type="server" />
+
+    <export function="applyGravityMapSetting" type="server" />
+    <export function="applySkyMapSetting" type="server" />
+    <export function="applyWaterMapSetting" type="server" />
+
+    <file src="README.md" />
+    <file src="LICENSE" />
+    <file src="DOWNLOAD.md" />
+
+    <file src="img/text.png" />
+    <file src="img/gravity.png" />
+    <file src="img/magnet.png" />
+    <file src="img/teleport.png" />
+    <file src="img/teleportTarget.png" />
+    <file src="img/health.png" />
+    <file src="img/sky.png" />
+    <file src="img/water.png" />
+</meta>
