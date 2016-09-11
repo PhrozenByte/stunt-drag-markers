@@ -58,6 +58,8 @@ Put briefly, the GNU AGPL is virtually the same as the GNU GPL: a free software 
 
 This means that if you modify the software, you **must** allow any player connected to your MTA server to retrieve the source code of your modified/derivative version of PhrozenByte Stunt Drag Markers (e.g. by providing download links). To make things easier, we have included a `DOWNLOAD.md` file which is declared as client-side file in the `meta.xml`. If you modify the software, you can comply with the condition by changing the download URL in this file.
 
+To cut a long story short: We recommend you to fork our GitHub repository and push all changes you've made to your fork ([Learn more][HelpForking]). Change the URL in the `DOWNLOAD.md` to your forked GitHub repository and you're ready to go. We would love to see if you open a PR to let your improvements flow back into the upstream project - this is called *Contributing* ([Learn more][HelpContributing]).
+
 PhrozenByte Stunt Drag Markers furthermore adds the `/license` command returning the original copyright and declares the `LICENSE` file as client-side file in the `meta.xml`. This also serves the above license terms.
 
 For the avoidance of doubt: Although the GNU AGPL is a copyleft license, you are *not* required to publish MTA gamemodes or maps using PhrozenByte Stunt Drag Markers under the terms of the GNU AGPL. *Using* this resource does *not* "infect" your gamemodes and maps, they do *not* become derivative works.
@@ -76,5 +78,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 [PhrozenByteDebug]: https://github.com/PhrozenByte/mtasa-debug
 [Issue]: https://github.com/PhrozenByte/stunt-drag-markers/issues
 [PR]: https://github.com/PhrozenByte/stunt-drag-markers/pulls
+[HelpForking]: https://guides.github.com/activities/forking/
+[HelpContributing]: https://guides.github.com/activities/contributing-to-open-source/
 [License]: LICENSE
 [LicenseOnline]: http://www.gnu.org/licenses/
